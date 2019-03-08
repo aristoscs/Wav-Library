@@ -1,0 +1,63 @@
+/**
+ * @authors Aristos Georgiou, Arsenios Dracoudis
+ *
+ * Project name: wavengine
+ *
+ * wavengine can modify and display statistics of .wav files.
+ *
+ * It was severely tested with valgrind for memory leaks and with gprof
+ * to improve functions to the maximum.
+ *
+ * To run the program you need the library file lib_wavengine.a and the executable
+ * wavengine, then you can execute any of the following commands.
+ *
+ * 0) -help
+ *   Displays all the commands.
+ *
+ * 1) -list
+ *   Displays the meta-data of .wav files.
+ *   Example: $ ./wavengine -list sound1.wav sound2.wav ... soundN.wav
+ *
+ * 2) -mono
+ *   Converts stereo .wav files to mono by deleting the right channel.
+ *   Space complexity: O(1)
+ *   Time complexity : O(n)
+ *   Example: $ ./wavengine -mono sound1.wav sound2.wav ... soundN.wav
+ *
+ * 3) -mix
+ *   Merges left channel of a .wav file with the right channel of another.
+ *   Space complexity: O(1)
+ *   Time complexity : O(n)
+ *   Example: $ ./wavengine -mix sound1.wav sound2.wav
+ *
+ * 4) -chop
+ *   Extract the contents of a file from a given range in seconds into a new file.
+ *   Space complexity: O(1)
+ *   Time complexity : O(n)
+ *   Example: $ ./wavengine -chop sound1.wav 2 10
+ *
+ * 5) -reverse
+ *  Reverses the data segment of a .wav file.
+ *  Space complexity: O(n)
+ *  Time complexity : O(n)
+ *  Example: $ ./wavengine -reverse sound1.wav sound2.wav ... soundN.wav
+ *
+ * 6) -similarity
+ *  Prints the euclidean and LCSS distance between .wav files.
+ *  Space complexity: O(2 * min(n, m))
+ *  Time complexity : O(n * m)
+ *  Example: $ ./wavengine -similarity sound1.wav sound2.wav ... soundN.wav
+ *
+ * 7) -encodeText
+ *  Encodes a message contained within a text to a .wav file.
+ *  Space complexity: O(n)
+ *  Time complexity : O(n)
+ *  Example: $ ./wavengine -encodeText sound1.wav message.txt
+ *
+ * 8) -decodeText
+ *  Decodes a message from a .wav file that had been encoded.
+ *  Space complexity: O(n)
+ *  Time complexity : O(n)
+ *  Example: $ ./wavengine -decodeText new-sound1.wav (message_length) out.txt
+ *
+ */
